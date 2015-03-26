@@ -3,20 +3,16 @@
 ; lost the next time the tool is used.
 ; -------------------------------------------------------------
 (
-(documentation "Your Title" "Your Name" "Your file comments")
 (AP AP-inch (seconds 1.0) (
 	idle
 ))
 (AP AP-moveing (minutes 1.0) (
 	moveto_navpoint
 ))
-(AP Jump (minutes 1.0) (
-	Jump
-))
 (C wander-map (seconds 2.0) (goal ((focusing_task 1.0 =)))
 	(elements
 		(	(CE-moveto-navpoint (trigger ((selected_target 1.0 =) (reached_target 0.0 =))) moveto-selected-nav)	)
-		(	(CE-find-nxt-waypoint (trigger ((close_navpoint 1.0 =))) select_navpoint)	)
+		(	(CE-find-nxt-waypoint (trigger ((close_navpoint 1.0 =))) select_navpoint )	)
 	)
 )
 (C get-enemy-flag (seconds 30.0) (goal ((have_enemy_flag 1.0 =)))
@@ -38,9 +34,6 @@
 )
 (SRDC life (goal ((game_ended 1.0 =)))
 	(drives
-		(
-
-		(jump (trigger ((ShouldIJump 2.0 !=))) Jump))
 		(
 
 		(return-enemy-flag (trigger ((have_enemy_flag 1.0 =))) retrace-back(seconds 0.3)))
