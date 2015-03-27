@@ -15,6 +15,7 @@
 ))
 (AP AP-attack (minutes 1.0) (
 	SetAttacker 
+	FaceAttacker 
 	ShootAttacker
 ))
 (C wander-map (seconds 2.0) (goal ((focusing_task 1.0 =)))
@@ -44,10 +45,10 @@
 	(drives
 		(
 
-		(attack (trigger ((SeeEnemy))) AP-attack))
+		(Attack (trigger ((SeeEnemy))) AP-attack))
 		(
 
-		(jump-around (trigger ((isStuck 1.0 ==))) AP-jump))
+		(jump-around (trigger ((ShouldIJump 1.0 ==))) AP-jump))
 		(
 
 		(return-enemy-flag (trigger ((have_enemy_flag 1.0 =))) retrace-back(seconds 0.3)))
