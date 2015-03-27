@@ -44,13 +44,13 @@
 	(drives
 		(
 
-		(return-enemy-flag (trigger ((have_enemy_flag 1.0 =))) retrace-back(seconds 0.3)))
+		(attack (trigger ((SeeEnemy))) AP-attack))
 		(
 
 		(jump-around (trigger ((isStuck 1.0 ==))) AP-jump))
 		(
 
-		(attack (trigger ((SeeEnemy))) AP-attack))
+		(return-enemy-flag (trigger ((have_enemy_flag 1.0 =))) retrace-back(seconds 0.3)))
 		(
 
 		(get-enemy-flag-from-base (trigger ((enemy_flag_reachable 1.0 =))) get-enemy-flag(seconds 0.3)))
