@@ -103,6 +103,13 @@ namespace Posh_sharp.POSHBot
             return false;
         }
 
+        [ExecutableAction("StopShoot")]
+        public bool StopShoot()
+        {
+            Console.Out.WriteLine(" stopping shooting");
+            GetBot().SendMessage("STOPSHOOT", new Dictionary<string, string>());
+            return false;
+        }
         /*
          * 
          * SENSES
@@ -159,6 +166,17 @@ namespace Posh_sharp.POSHBot
         [ExecutableSense("EnemyOccluded")]
         public bool EnemyOccluded()
         {
+            return false;
+        }
+
+        [ExecutableSense("CurrentlyShooting")]
+        public bool CurrentlyShooting()
+        {
+            POSHBot bot = GetBot();
+            if (bot.info.Keys.Contains("Shooting"))
+            {
+                return Boolean.Parse(bot.info["Shooting"]);
+            }
             return false;
         }
     }

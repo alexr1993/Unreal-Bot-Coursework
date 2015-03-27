@@ -18,6 +18,9 @@
 	FaceAttacker 
 	ShootAttacker
 ))
+(AP AP-stopattack (minutes 1.0) (
+	StopShoot
+))
 (C wander-map (seconds 2.0) (goal ((focusing_task 1.0 =)))
 	(elements
 		(	(CE-moveto-navpoint (trigger ((selected_target 1.0 =) (reached_target 0.0 =))) moveto-selected-nav)	)
@@ -43,6 +46,9 @@
 )
 (SRDC life (goal ((game_ended 1.0 =)))
 	(drives
+		(
+
+		(StopAttack (trigger ((SeeEnemy 1.0 !=) (CurrentlyShooting))) AP-stopattack))
 		(
 
 		(Attack (trigger ((SeeEnemy))) AP-attack))
