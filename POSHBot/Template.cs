@@ -100,8 +100,9 @@ namespace Posh_sharp.POSHBot
             {
                 Console.Out.WriteLine(" jumping");
             }
+            POSHBot bot = GetBot();
             GetBot().SendMessage("JUMP", new Dictionary<string, string>());
-            Thread.Sleep(1000);
+            Thread.Sleep(500);
             return false;
         }
 
@@ -135,10 +136,23 @@ namespace Posh_sharp.POSHBot
             return 0;
         }
 
-        [ExecutableSense("ShouldIJump")]
-        public bool ShouldIJump()
+        [ExecutableSense("isStuck")]
+        public bool isStuck()
         {
-            return true;
+            // proprioception: If we haven't moved where we were trying to, then jump
+            // check last position and current position against last move
+            POSHBot bot = GetBot();
+            bool stuck = false;
+            String loc = bot.info["Location"];
+            Console.Out.WriteLine("Location: " + loc);
+            if (stuck)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }     
