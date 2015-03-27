@@ -28,11 +28,7 @@ namespace Posh_sharp.POSHBot.util
             rawNP.Remove("Id");
             Dictionary<int,Vector3> path = new Dictionary<int,Vector3>();
             // debug
-            if (rawNP.ContainsKey("Reachable"))
-            {
-                Console.Out.WriteLine(rawNP);
-                Console.Out.WriteLine("----------");
-            }   
+ 
 
             // sorted string list regarding length and lexicographically problems might occur if a key pair would be 01 vs 2
             IOrderedEnumerable<string> sortedList = rawNP.Keys.OrderBy(key => key.Length).ThenBy(key => key);
@@ -56,13 +52,6 @@ namespace Posh_sharp.POSHBot.util
 
             // now get a list of just keys, and sort it to use in extracting the key:value pairs
             Dictionary<string, string>.KeyCollection keyList = dictRawNP.Keys;
-
-            // debug
-            if (dictRawNP.ContainsKey("Reachable"))
-            {
-                Console.Out.WriteLine(dictRawNP.ToString());
-                Console.Out.WriteLine("-------");
-            }
 
             IOrderedEnumerable<string> sortedList =
                 keyList.OrderBy(key => key.Length).ThenBy(key => key);
