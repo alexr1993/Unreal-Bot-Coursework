@@ -11,7 +11,31 @@ POSHBot.ip = 127.0.0.1
 POSHBot.port = 3000
 
 [POSHBot]
-POSHBot.botname = Delila
+POSHBot.botname = Abelia
+POSHBot.team = 0
+POSHBot.ip = 127.0.0.1
+POSHBot.port = 3000
+
+[POSHBot]
+POSHBot.botname = Othelia
+POSHBot.team = 0
+POSHBot.ip = 127.0.0.1
+POSHBot.port = 3000
+
+[POSHBot]
+POSHBot.botname = Mallory
+POSHBot.team = 1
+POSHBot.ip = 127.0.0.1
+POSHBot.port = 3000
+
+[POSHBot]
+POSHBot.botname = Valerie
+POSHBot.team = 1
+POSHBot.ip = 127.0.0.1
+POSHBot.port = 3000
+
+[POSHBot]
+POSHBot.botname = Amelie
 POSHBot.team = 1
 POSHBot.ip = 127.0.0.1
 POSHBot.port = 3000

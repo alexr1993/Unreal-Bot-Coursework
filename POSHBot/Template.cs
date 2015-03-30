@@ -142,7 +142,6 @@ namespace Posh_sharp.POSHBot
         [ExecutableSense("ShouldIJump")]
         public bool ShouldIJump()
         {
-            bool s = false;
             // proprioception: If we haven't moved where we were trying to, then jump
             // check last position and current position against last move
             POSHBot bot = GetBot();
@@ -151,6 +150,8 @@ namespace Posh_sharp.POSHBot
                 String loc = bot.info["Location"];
                 Console.Out.WriteLine("Location: " + loc);
             }
+
+            bool s = bot.Stuck();
 
             if (s)
             {
