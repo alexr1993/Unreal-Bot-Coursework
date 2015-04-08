@@ -22,20 +22,20 @@ POSHBot.team = 0
 POSHBot.ip = 127.0.0.1
 POSHBot.port = 3000
 
-[POSHBot]
-POSHBot.botname = Mallory
-POSHBot.team = 1
-POSHBot.ip = 127.0.0.1
-POSHBot.port = 3000
+[POSHBot_attack]
+POSHBot_attack.botname = Mallory
+POSHBot_attack.team = 1
+POSHBot_attack.ip = 127.0.0.1
+POSHBot_attack.port = 3000
 
-[POSHBot]
-POSHBot.botname = Valerie
-POSHBot.team = 1
-POSHBot.ip = 127.0.0.1
-POSHBot.port = 3000
+[POSHBot_attack]
+POSHBot_attack.botname = Valerie
+POSHBot_attack.team = 1
+POSHBot_attack.ip = 127.0.0.1
+POSHBot_attack.port = 3000
 
-[POSHBot]
-POSHBot.botname = Amelie
-POSHBot.team = 1
-POSHBot.ip = 127.0.0.1
-POSHBot.port = 3000
+[POSHBot_attack]
+POSHBot_attack.botname = Amelie
+POSHBot_attack.team = 1
+POSHBot_attack.ip = 127.0.0.1
+POSHBot_attack.port = 3000
