@@ -153,14 +153,21 @@ namespace Posh_sharp.POSHBot
 
             bool s = bot.Stuck();
 
-            if (s)
+            if (bot.info.Keys.Contains("Velocity"))
             {
-                return true;
+                String velocity = bot.info["Velocity"];
+                String[] vel = velocity.Split(',');
+                double x = double.Parse(vel[0]);
+                double y = double.Parse(vel[1]);
+                double z = double.Parse(vel[2]);
+
+                // Only jump if we have momentum
+                if (x != 0 || y != 0 && s)
+                {
+                    return true;
+                }
             }
-            else
-            {
-                return false;
-            }
+            return false;
         }
 
         [ExecutableSense("EnemyOccluded")]
