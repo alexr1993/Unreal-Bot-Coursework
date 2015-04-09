@@ -66,9 +66,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="library\plans\clean-attackbot.lap" />
+    <None Include="library\plans\defendbot.lap" />
+    <None Include="library\plans\oldPOSH-attackbot.lap" />
     <None Include="library\plans\POSHBot.lap">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="library\plans\POSHBot_attack.lap" />
+    <None Include="library\plans\POSHBot_attack2.lap" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
