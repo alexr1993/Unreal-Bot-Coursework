@@ -99,6 +99,12 @@ namespace Posh_sharp.POSHBot
                 Console.Out.WriteLine(" jumping");
             }
             GetBot().SendMessage("JUMP", new Dictionary<string, string>());
+            if (GetNavigator().selected_target())
+            {
+                Movement movement = new Movement(agent);
+                movement.SendMoveToLocation(GetNavigator().GetSelectedNavpoint().Location);
+                GetNavigator().MovedToNavpoint(GetNavigator().GetSelectedNavpoint());
+            }
             return false;
         }
 
@@ -145,13 +151,6 @@ namespace Posh_sharp.POSHBot
             // proprioception: If we haven't moved where we were trying to, then jump
             // check last position and current position against last move
             POSHBot bot = GetBot();
-            if (bot.info.Keys.Contains("Location"))
-            {
-                String loc = bot.info["Location"];
-                Console.Out.WriteLine("Location: " + loc);
-            }
-
-            bool s = bot.Stuck();
 
             if (bot.info.Keys.Contains("Velocity"))
             {
@@ -161,8 +160,7 @@ namespace Posh_sharp.POSHBot
                 double y = double.Parse(vel[1]);
                 double z = double.Parse(vel[2]);
 
-                // Only jump if we have momentum
-                if (x != 0 || y != 0 && s)
+                if (x == 0 && y == 0)
                 {
                     return true;
                 }

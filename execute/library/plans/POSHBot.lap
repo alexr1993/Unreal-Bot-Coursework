@@ -11,7 +11,8 @@
 	moveto_navpoint
 ))
 (AP AP-jump (minutes 1.0) (
-	Jump
+	Jump 
+	moveto_navpoint
 ))
 (AP AP-attack (minutes 1.0) (
 	SetAttacker 
@@ -54,7 +55,7 @@
 		(Attack (trigger ((SeeEnemy) (ArmedAndAmmo))) AP-attack))
 		(
 
-		(jump-around (trigger ((ShouldIJump 1.0 ==))) AP-jump(seconds 1.0)))
+		(jump-around (trigger ((ShouldIJump 1.0 ==))) AP-jump(seconds 2.0)))
 		(
 
 		(return-enemy-flag (trigger ((have_enemy_flag 1.0 =))) retrace-back(seconds 0.3)))
