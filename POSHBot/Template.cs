@@ -170,12 +170,6 @@ namespace Posh_sharp.POSHBot
             return false;
         }
 
-        [ExecutableSense("EnemyOccluded")]
-        public bool EnemyOccluded()
-        {
-            return false;
-        }
-
         [ExecutableSense("CurrentlyShooting")]
         public bool CurrentlyShooting()
         {
