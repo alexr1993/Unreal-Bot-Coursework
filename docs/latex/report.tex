@@ -41,7 +41,7 @@
 
 \section{Introduction}
 % Introduce problem
-The task of game AI is multifaceted. Originating as a search constrained by hardware capability, proficiency is no longer the only benchmark of non-human player quality, with believability and the ability to make the game more fun also being required. This task is interpreted as the optimal division of responsibility between teammates in order to achieve a common goal; this may mean carrying out complementary tasks, or all adopting a single effective approach (although it is hypothesised the former is better for bots, as it is most real games for humans). Behaviour oriented design is used to create Unreal 2004 bots which will play capture the flag.
+The task of game AI is multifaceted. Originating as a search constrained by hardware capability, proficiency is no longer the only benchmark of non-human player quality, with believability and the ability to make the game more fun also being required. This task is interpreted as the optimal division of responsibility between teammates in order to achieve a common goal; this may mean carrying out complementary tasks, or all adopting a single effective approach (although it is hypothesised the former is better for bots, as it is for most real games for humans). Behaviour oriented design is used to create Unreal 2004 bots which will play capture the flag.
 
 \section{Approach}
 % the benefits and/or costs of creating a team for capture the flag, and how you helped them cooperate.
@@ -60,15 +60,18 @@ My approach is summarised with the following behaviours, from highest to lowest 
 \item Inch
 \end{enumerate}
 
+This plan is deployed on all bots which separately cater to all of the objectives. This is uncoordinated, but a simple way of trying to win.
+
 % Avoid discussing results here, keep the methodology at the forefront
 
-Whilst no two behaviours have the same priority, not all are mutually exclusive. If I had time, I would split the conflicting tasks of capturing/returning the flag, and defending/pursuing the flag.
+Whilst no two behaviours have the same priority, not all are mutually exclusive. If I had time, I would split the conflicting tasks of capturing/returning the flag, and defending/pursuing the flag like so:
 \begin{itemize}
 \item \textbf{Agent 1: Attacker} Engage in combat if not carrying flag, Capture flag, return flag, pursue flag carrier
 \item \textbf{Agent 2: Defender} Find rocket launcher if flag is safe, Defend flag, Pursue flag carrier
 \item \textbf{Agent 3: Midfielder} Find rocket launcher, pursue flag carrier, return flag
 \end{itemize}
 
+This would ensure that all objectives receive attention, and that both of the vital ones --- flag attacking and defending have a dedicated player attending to them.
 \section{Results}
 % An observation should be a point about what worked or what didn?t work with respect to your task. They can be about game AI, cognitive systems more generally, cooperation more specifically. They can be informed critiques of the software tools. An observation can be of more than one sentence, so you might want to start with a hypothesis, and then describe evidence that lead you to believe it, or an experiment about how you would test it. In general, you will do better if you draw conclusions that might be applicable to more than only your own bot. Don?t feel obliged to recount exactly how your bot did in the competition?I will get that information from the tutors. The observations will be marked on a three-point scale:
 % 0 Missing or redundant.
@@ -98,7 +101,7 @@ The three bots running the monolithic plan detailed above have the ability to ju
 %back to state exactly what you tried to do (brief summary of the introduction), what the outcome was
 One of the main dilemmas during implementation was symmetric vs asymmetric teamwork. Team sports  regularly divide players into positions in order to firstly split responsibility optimally, and secondly use players in positions that benefit from their particular strengths. My solution uses only one plan because all bots have the same attributes and the the task affords a mob-like approach.
 
-Capture the flag has two goals on the surface --- defend your flag, capture their flag. However, you can't complete a capture without defending your own. This causes the game to boil down to a sort of tug-of-war, where a concentrated effort (caused by a single unified plan) can lead to reasonable (although not finely tuned) success.
+Capture the flag has two goals on the surface --- defend your flag, capture their flag. However, you can't complete a capture without defending your own. This causes the game to boil down to a sort of tug-of-war, where a concentrated effort (caused by a single unified plan) can lead to reasonable success.
 
 If I had time to spare programming this, using the rocket launcher would add an interesting element. This would give one bot much more killing power, which I would use to defend the flag. When killed, the weapon would land safely in the base for another friendly bot to acquire. A low effort and high reward to winning a game of CTF is ``parking the bus'' when you are ahead, by leaving all bots at the base and waiting for the timer to run out.
 
